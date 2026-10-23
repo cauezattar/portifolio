@@ -1,0 +1,671 @@
+/* =========================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+:root {
+    --transicao: all 0.3s ease;
+}
+
+/* Tema Escuro (Padrão inicial) */
+[data-tema="dark"] {
+    --fundo-principal: #121212;
+    --fundo-secundario: #1e1e1e;
+    --fundo-card: #252525;
+    --texto-principal: #E0E0E0;
+    --texto-secundario: #A0A0A0;
+    --cor-primaria: #BB86FC;
+    --cor-primaria-hover: #9955ef;
+    --borda-cor: #333333;
+    --sombra-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Tema Claro */
+[data-tema="light"] {
+    --fundo-principal: #F8F9FA;
+    --fundo-secundario: #FFFFFF;
+    --fundo-card: #FFFFFF;
+    --texto-principal: #212529;
+    --texto-secundario: #6C757D;
+    --cor-primaria: #0D6EFD;
+    --cor-primaria-hover: #0b5ed7;
+    --borda-cor: #DEE2E6;
+    --sombra-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--texto-principal);
+    transition: var(--transicao);
+    line-height: 1.6;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--fundo-principal);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: 5px;
+}
+
+/* Layout Utilitários */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.secao {
+    padding: 5rem 0;
+}
+
+.fundo-alternativo {
+    background-color: var(--fundo-secundario);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.secao-titulo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.subsecao-titulo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--fundo-principal);
+    border-bottom: 1px solid var(--borda-cor);
+    z-index: 1000;
+    transition: var(--transicao);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--texto-principal);
+    text-decoration: none;
+}
+
+.logo strong {
+    color: var(--cor-primaria);
+}
+
+.nav-lista {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--texto-secundario);
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.nav-link:hover {
+    color: var(--cor-primaria);
+}
+
+.nav-acoes {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.botao-icone {
+    background: none;
+    border: 1px solid var(--borda-cor);
+    color: var(--texto-principal);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transicao);
+}
+
+.botao-icone:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.menu-hamburguer {
+    display: none;
+}
+
+/* =========================================
+   SEÇÃO HERO
+   ========================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+}
+
+.hero-conteudo {
+    max-width: 750px;
+}
+
+.saudacao {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-principal {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-principal {
+    font-size: 1.8rem;
+    color: var(--texto-secundario);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.hero-descricao {
+    font-size: 1.1rem;
+    color: var(--texto-secundario);
+    margin-bottom: 2rem;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 1rem;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.botao-primario {
+    background-color: var(--cor-primaria);
+    color: #121212;
+}
+
+.botao-primario:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    background: none;
+    border: 1px solid var(--borda-cor);
+    color: var(--texto-principal);
+}
+
+.botao-secundario:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   SEÇÃO SOBRE MIM E SKILLS
+   ========================================= */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.sobre-texto p {
+    margin-bottom: 1.2rem;
+    color: var(--texto-secundario);
+}
+
+.sobre-texto strong {
+    color: var(--texto-principal);
+}
+
+.skills-card {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cor);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-card);
+}
+
+.skills-card h3 {
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.tag {
+    background-color: var(--fundo-principal);
+    border: 1px solid var(--borda-cor);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* =========================================
+   SEÇÃO EDUCAÇÃO & ROADMAP
+   ========================================= */
+.card-educacao {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cor);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--sombra-card);
+}
+
+.educacao-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.educacao-cabecalho h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.instituicao {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.selo-excelencia {
+    background-color: rgba(187, 134, 252, 0.1);
+    color: var(--cor-primaria);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--cor-primaria);
+}
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.roadmap-item {
+    background-color: var(--fundo-principal);
+    border: 1px solid var(--borda-cor);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    transition: var(--transicao);
+}
+
+.roadmap-item.ativo {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.15);
+}
+
+.roadmap-icone {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.8rem;
+}
+
+.roadmap-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.roadmap-item p {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    background-color: var(--borda-cor);
+    color: var(--texto-secundario);
+    font-weight: 600;
+}
+
+.status-badge.atual {
+    background-color: var(--cor-primaria);
+    color: #121212;
+}
+
+/* =========================================
+   PORTFÓLIO E ESTUDOS
+   ========================================= */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.projeto-card {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cor);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    transition: var(--transicao);
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+}
+
+.projeto-img-placeholder {
+    height: 160px;
+    background-color: var(--fundo-principal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--cor-primaria);
+    border-bottom: 1px solid var(--borda-cor);
+}
+
+.projeto-info {
+    padding: 1.5rem;
+}
+
+.projeto-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.projeto-info p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+}
+
+.projeto-tecnologias {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.projeto-tecnologias span {
+    font-size: 0.75rem;
+    background-color: var(--fundo-principal);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--borda-cor);
+}
+
+.projeto-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.link-projeto {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: var(--transicao);
+}
+
+.link-projeto:hover {
+    opacity: 0.8;
+}
+
+.estudos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.estudo-card {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cor);
+    padding: 1.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--texto-principal);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--sombra-card);
+    transition: var(--transicao);
+}
+
+.estudo-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--cor-primaria);
+}
+
+.estudo-card i {
+    font-size: 1.8rem;
+    color: var(--cor-primaria);
+}
+
+.estudo-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.estudo-card p {
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+}
+
+/* =========================================
+   CONTATO
+   ========================================= */
+.contato-sub {
+    color: var(--texto-secundario);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contatos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.contato-card {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--borda-cor);
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--texto-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: var(--sombra-card);
+    transition: var(--transicao);
+}
+
+.contato-card i {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    transition: var(--transicao);
+}
+
+.contato-card span {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Hover Personalizado por Rede Social */
+.contato-card.email:hover { border-color: #EA4335; background-color: rgba(234, 67, 53, 0.05); }
+.contato-card.linkedin:hover { border-color: #0A66C2; background-color: rgba(10, 102, 194, 0.05); }
+.contato-card.github:hover { border-color: #858585; background-color: rgba(133, 133, 133, 0.05); }
+.contato-card.whatsapp:hover { border-color: #25D366; background-color: rgba(37, 211, 102, 0.05); }
+
+/* =========================================
+   RODAPÉ E BOTÃO TOPO
+   ========================================= */
+.rodape {
+    border-top: 1px solid var(--borda-cor);
+    padding: 2rem 0;
+    background-color: var(--fundo-principal);
+    text-align: center;
+}
+
+.rodape-conteudo p {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.cor-coracao {
+    color: #ff4757;
+}
+
+.botao-topo {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--cor-primaria);
+    color: #121212;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transicao);
+    z-index: 999;
+}
+
+.botao-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.botao-topo:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+@media (max-width: 992px) {
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projetos-grid, .estudos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contatos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    .menu-navegacao {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background-color: var(--fundo-principal);
+        border-bottom: 1px solid var(--borda-cor);
+        padding: 1.5rem 0;
+        transition: var(--transicao);
+    }
+
+    .menu-navegacao.ativo {
+        left: 0;
+    }
+
+    .nav-lista {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo-principal {
+        font-size: 1.4rem;
+    }
+
+    .roadmap-grid {
+        grid-template-columns: 1fr;
+    }
+}
