@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caue Feitoza | Desenvolvedor Front-end</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos CSS Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header id="cabecalho" class="cabecalho">
+        <div class="container nav-container">
+            <a href="#" class="logo">Caue<strong>.dev</strong></a>
+            
+            <nav id="menu-navegacao" class="menu-navegacao">
+                <ul class="nav-lista">
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#educacao" class="nav-link">Educação</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-acoes">
+                <!-- Botão Alternar Tema (Dark/Light) -->
+                <button id="botao-tema" class="botao-icone" aria-label="Alternar tema">
+                    <i class="bi bi-moon-fill" id="icone-tema"></i>
+                </button>
+                
+                <!-- Botão Menu Hambúrguer (Mobile) -->
+                <button id="botao-menu" class="botao-icone menu-hamburguer" aria-label="Abrir menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero (Apresentação Principal) -->
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-conteudo">
+                    <span class="saudacao">Olá, meu nome é</span>
+                    <h1 class="titulo-principal">Cauê</h1>
+                    <h2 class="subtitulo-principal"><span id="maquina-escrever">Estudante de Desenvolvimento Full Stack</span></h2>
+                    <p class="hero-descricao">
+                        Estou tentando fazer códigos e estudar como programador
+                    </p>
+                    <div class="hero-botoes">
+                        <a href="curriculo.pdf" download class="botao botao-primario">
+                            <i class="bi bi-file-earmark-arrow-down-fill"></i> Baixar meu CV
+                        </a>
+                        <a href="#projetos" class="botao botao-secundario">
+                            Ver Projetos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="secao">
+            <div class="container">
+                <h2 class="secao-titulo">Sobre Mim</h2>
+                <div class="sobre-grid">
+                    <div class="sobre-texto">
+                        <p>
+                            Sou estudante do 1º ano do Ensino Médio Técnico em Informática para Internet pela <strong>SESC Escola</strong>, em parceria com o <strong>SENAC</strong>. Com forte foco em programação, iniciei minha trilha de aprendizado me especializando em desenvolvimento Front-end.
+                        </p>
+                        <p>
+                            Nos próximos anos, minha formação se expandirá para o Back-end (2º ano) e desenvolvimento Mobile (3º ano), construindo uma base sólida para me tornar um Desenvolvedor Full Stack completo.
+                        </p>
+                    </div>
+                    <div class="skills-card">
+                        <h3>Hard Skills & Tecnologias</h3>
+                        <div class="tags-container">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Lógica de Programação</span>
+                            <span class="tag">Algoritmos</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Educação (Roadmap / Trilha Técnica) -->
+        <section id="educacao" class="secao fundo-alternativo">
+            <div class="container">
+                <h2 class="secao-titulo">Formação & Roadmap</h2>
+                <div class="card-educacao">
+                    <div class="educacao-cabecalho">
+                        <div>
+                            <h3>Ensino Médio Integrado ao Técnico em Informática para Internet</h3>
+                            <p class="instituicao">SESC Escola & SENAC | Conclusão prevista: 2026</p>
+                        </div>
+                        <span class="selo-excelencia"><i class="bi bi-patch-check-fill"></i> Instituição de Excelência</span>
+                    </div>
+                    
+                    <!-- Roadmap em 3 Etapas -->
+                    <div class="roadmap-grid">
+                        <div class="roadmap-item ativo">
+                            <div class="roadmap-icone"><i class="bi bi-code-slash"></i></div>
+                            <h4>1º Ano</h4>
+                            <p>Front-end</p>
+                            <span class="status-badge atual">Em andamento</span>
+                        </div>
+                        <div class="roadmap-item">
+                            <div class="roadmap-icone"><i class="bi bi-server"></i></div>
+                            <h4>2º Ano</h4>
+                            <p>Back-end</p>
+                            <span class="status-badge">Próximo passo</span>
+                        </div>
+                        <div class="roadmap-item">
+                            <div class="roadmap-icone"><i class="bi bi-phone"></i></div>
+                            <h4>3º Ano</h4>
+                            <p>Mobile</p>
+                            <span class="status-badge">Futuro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Portfólio (Projetos e Estudos) -->
+        <section id="projetos" class="secao">
+            <div class="container">
+                <h2 class="secao-titulo">Portfólio & Estudos</h2>
+                
+                <!-- Subseção A: Projetos de Destaque -->
+                <h3 class="subsecao-titulo">Projetos de Destaque</h3>
+                <div class="projetos-grid">
+                    <!-- Projeto 1 -->
+                    <article class="projeto-card">
+                        <div class="projeto-img-placeholder">
+                            <i class="bi bi-calculator"></i>
+                        </div>
+                        <div class="projeto-info">
+                            <h4>Compasso Musical</h4>
+                            <p>Aplicação pratica de como fazer um site.</p>
+                            <div class="projeto-tecnologias">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="#" target="_blank" class="link-projeto"><i class="bi bi-globe"></i> Site</a>
+                                <a href="#" target="_blank" class="link-projeto"><i class="bi bi-github">https://github.com/cauezattar/compasso-musical</i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 2 -->
+                    <article class="projeto-card">
+                        <div class="projeto-img-placeholder">
+                            <i class="bi bi-controller"></i>
+                        </div>
+                        <div class="projeto-info">
+                            <h4>Robo Maker </h4>
+                            <p>Pratica sozinho de como fazer um site.</p>
+                            <div class="projeto-tecnologias">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="projeto-links">
+                                <a href="#" target="_blank" class="link-projeto"><i class="bi bi-globe"></i> Site</a>
+                                <a href="#" target="_blank" class="link-projeto"><i class="bi bi-github">https://github.com/cauezattar/projeto-robomaker/settings/pages</i> Código</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Subseção B: Repositórios de Estudo -->
+                <h3 class="subsecao-titulo" style="margin-top: 3rem;">Repositórios de Estudo</h3>
+                <div class="estudos-grid">
+                    <a href="#" target="_blank" class="estudo-card">
+                        <i class="bi bi-folder-fill"></i>
+                        <div>
+                            <h4>Trilha de HTML e CSS</h4>
+                            <p>Sobre a estrutura do site.</p>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="estudo-card">
+                        <i class="bi bi-folder-fill"></i>
+                        <div>
+                            <h4>Trilha de JavaScript Vanilla</h4>
+                            <p>Como dar forma ao site e interação.</p>
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" class="estudo-card">
+                        <i class="bi bi-folder-fill"></i>
+                        <div>
+                            <h4>Lógica e Algoritmos</h4>
+                            <p>Comandos do site e atalhos</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="secao fundo-alternativo">
+            <div class="container text-center">
+                <h2 class="secao-titulo">Vamos Conversar?</h2>
+                <p class="contato-sub">Estou em busca de novas conexões e oportunidades na tecnologia. Sinta-se à vontade para me chamar!</p>
+                
+                <div class="contatos-grid">
+                    <a href="mailto:joao.silva@email.com" class="contato-card email">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>E-mail</span>
+                    </a>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="contato-card github">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://wa.me/5500000000000" target="_blank" class="contato-card whatsapp">
+                        <i class="bi bi-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <p>&copy; <span id="ano-atual">2026</span> Cauê Feitoza. Desenvolvido com <i class="bi bi-heart-fill cor-coracao"></i> com foco e dedicação.</p>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
